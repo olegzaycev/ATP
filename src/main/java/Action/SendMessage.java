@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.Keys;
 
 public class SendMessage {
 
@@ -17,7 +18,8 @@ public class SendMessage {
     private WebElement ClickMail;
     @FindBy(xpath = "//*[@id=\"react-root\"]/div/div/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea")
     private WebElement TextMessage;
-
+    @FindBy(xpath = "//*[@id=\"react-root\"]/div/div/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[3]/button")
+    private WebElement ButtonSendMessage;
 
 
     public void ClickOnMail()
@@ -28,5 +30,8 @@ public class SendMessage {
     {
         TextMessage.sendKeys(text);
     }
+    public void ClickOnSend(){ButtonSendMessage.click();}
+
+
 
 }
